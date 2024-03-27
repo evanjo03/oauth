@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>oauth htmlx</title>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+      />
+    </head>
+    <body>
+      <form
+        class="p-4"
+        hx-target="#token"
+        hx-swap="outerHTML"
+        hx-post="/oauth"
+      >
+        <h1 class="text-center">OAuth2</h1>
+        <label for="domain">Domain</label>
+        <input type="text" name="domain" id="domain" />
+
+        <label for="client_id">Client ID</label>
+        <input type="text" name="client_id" id="client_id" />
+
+        <label for="client_secret">Client Secret</label>
+        <input type="text" name="client_secret" id="client_secret" />
+
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" />
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+
+        <label for="audience">Audience</label>
+        <input type="text" name="audience" id="audience" />
+
+        <label for="scope">Scope</label>
+        <input type="text" name="scope" id="scope" />
+
+        <label for="grant_type">Grant Type</label>
+        <input type="text" name="grant_type" id="grant_type" />
+
+        <button type="submit">Get Token</button>
+      </form>
+
+      <div class="p-4">
+        <span id="token"></span>
+      </div>
+
+      <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+      <script src="https://cdn.tailwindcss.com"></script>
+    </body>
+  </html>
+</DOCTYPE>
